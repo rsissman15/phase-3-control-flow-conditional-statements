@@ -1,5 +1,6 @@
 require_relative 'spec_helper'
 require_relative '../control_flow'
+require 'pry'
 
 describe '#admin_login' do
   
@@ -89,4 +90,59 @@ describe '#calculator' do
     expect(calculator('nope', 4, 2)).to eq(nil)
   end
   
+end
+
+
+def admin_login(username,password)
+  if username=='admin' && password=='12345'
+    "Access granted"
+  elsif username=="ADMIN" && password=='12345'
+    "Access granted"
+  else
+    "Access denied"
+  end
+
+end 
+
+def hows_the_weather(temperature)
+  if temperature<40
+    "It's brisk out there!"
+  elsif temperature>=40 && temperature<=65
+    "It's a little chilly out there!"
+  elsif temperature>85
+    "It's too dang hot out there!"
+  else
+    "It's perfect out there!"
+  end
+  
+
+end
+
+def fizzbuzz(number)
+  if number % 3==0 && number % 5==0
+    "FizzBuzz"
+  elsif number % 3==0
+    "Fizz"
+  elsif number % 5==0
+    "Buzz"
+  else
+    number
+  end
+end
+
+
+def calculator(symbol,num1,num2)
+  case symbol
+  when "+"
+    num1+num2
+  when "-"
+    num1-num2
+  when"*"
+    num1*num2
+  when "/"
+    num1/num2
+  else
+    puts "error"
+    nil
+  end 
 end
